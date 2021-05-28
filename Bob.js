@@ -12,7 +12,7 @@ class Bob{
 
 	}
 	    
-		this.body=Bodies.circle(this.x, 100, 100, options)
+		this.body=Bodies.circle(this.x, 600, 100, options)
 		World.add(world, this.body);
 		
 
