@@ -11,24 +11,26 @@ class Bob{
 		isStatic:true,
 
 	}
+	this.y=500;
+	this.r=100;	
 	    
-		this.body=Bodies.circle(this.x, 600, 100, options)
+		this.body=Bodies.circle(this.x, this.y, this.r, options)
 		World.add(world, this.body);
 		
 
 	}
 	display()
 	{
-			var paperpos=this.body.position;		
+			var pos=this.body.position;		
 			push()
-			translate(paperpos.x, paperpos.y);
+			translate(pos.x, pos.y);
 			rectMode(CENTER)
 			strokeWeight(4);
 			stroke("black");
 			fill("pink");
-			//draw the ellipse here to display the rubber ball
-            //make a ellipse,radius,delete ground class on line 30
-            ellipse(paperpos.x,paperpos.y,50);  
+			
+            
+            ellipse(pos.x,pos.y,50);  
 			pop(); 
 	}
 }
