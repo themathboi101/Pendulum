@@ -1,17 +1,26 @@
-class Roof {
-    constructor(x,y,width,height) {
-      var options = {
-          isStatic: true
-      }
-      this.body = Bodies.rectangle(x,y,width,height,options);
-      this.width = width;
-      this.height = height;
-      World.add(world, this.body);
+class Rope{
+    constructor(bodyA,bodyB,offsetX,offsetY){
+        this.offsetX=offsetX;
+        this.offsetY=offsetY
+
+        var options={
+        bodyA:bodyA,
+        bodyB:bodyB,
+        pointB:{x:this.offsetX,y:this.offsetY},
+        }
+
+        this.chain= Matter.Constraint.create(options);
+        World.add(world,this.chain);
     }
+
     display(){
-      var pos =this.body.position;
-      rectMode(CENTER);
-      fill("green");
-      rect(pos.x, pos.y, this.width, this.height);
+        var Apos=this.chain.bodyA.position;
+        var Bpos=this.chain.bodyB.position;
+        var Cpos=pointB.x+this.offsetX;
+        var Dpos=pointB.y+this.offsetY;
+
+        strokeWeight(6);
+        line(Apos.x,Apos.y,Cpos,Dpos);
+
     }
-  }
+}
