@@ -11,8 +11,8 @@ class Bob{
 		isStatic:true,
 
 	}
-	this.y=500;
-	this.r=100;	
+		this.y=500;
+		this.r=50;	
 	    
 		this.body=Bodies.circle(this.x, this.y, this.r, options)
 		World.add(world, this.body);
@@ -24,13 +24,13 @@ class Bob{
 			var pos=this.body.position;		
 			push()
 			translate(pos.x, pos.y);
-			rectMode(CENTER)
+			
 			strokeWeight(4);
 			stroke("black");
 			fill("pink");
 			
-            
-            ellipse(pos.x,pos.y,50);  
+            ellipseMode(CENTER);
+            ellipse(0,0,50,50);  
 			pop(); 
 	}
 }
