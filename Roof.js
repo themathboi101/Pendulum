@@ -19,7 +19,7 @@ class Rope{
         var thirdPos=pointB.x+this.offsetX;
         var fourthPos=pointB.y+this.offsetY;
 
-        strokeWeight(6);
+        strokeWeight(5);
         line(firstPos,secondPos,thirdPos,fourthPos);
 
     }
