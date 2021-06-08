@@ -64,12 +64,11 @@ function draw() {
  
 }
 function keyPressed(){
-	if(keyCode===37){
-		bobObject1.isStatic=false;
-		}
+	 if (keyCode === UP_ARROW){ 
+	  Matter.Body.applyForce(bobObject1.body,bobObject1.body.position, {x:-50,y:-45}); } 
 		
-		if(keyCode===39){
-			bobObject5.isStatic=false;
+		if(keyCode===LEFT_ARROW){
+			Matter.Body.applyForce(bobObject5.body,bobObject5.body.position,{x:680,y:-45};
 		}
 	
 }
