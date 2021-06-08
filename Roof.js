@@ -9,18 +9,18 @@ class Rope{
         pointB:{x:this.offsetX,y:this.offsetY},
         }
 
-        this.chain= Matter.Constraint.create(options);
-        World.add(world,this.chain);
+        this.roof= Matter.Constraint.create(options);
+        World.add(world,this.roof);
     }
 
     display(){
-        var Apos=this.chain.bodyA.position;
-        var Bpos=this.chain.bodyB.position;
-        var Cpos=pointB.x+this.offsetX;
-        var Dpos=pointB.y+this.offsetY;
+        var firstPos=this.roof.bodyA.position;
+        var secondPos=this.roof.bodyB.position;
+        var thirdPos=pointB.x+this.offsetX;
+        var fourthPos=pointB.y+this.offsetY;
 
         strokeWeight(6);
-        line(Apos.x,Apos.y,Cpos,Dpos);
+        line(firstPos,secondPos,thirdPos,fourthPos);
 
     }
 }
